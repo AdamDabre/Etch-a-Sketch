@@ -15,6 +15,18 @@ function createGrid(rowsAmount, columnsAmount) {
     }
     document.body.appendChild(container);
 }
-let rows = 6;
-let columns = 6;
+
+
+
+let rows = 32;
+let columns = 32;
 createGrid(rows, columns);
+const squares = document.querySelectorAll(".rows");
+squares.forEach(square => {
+    square.addEventListener('mouseover', () => {
+        square.style.background = "black";
+    })
+    square.addEventListener("mousedown", () => {
+        square.style.background = "black";
+    })
+})
