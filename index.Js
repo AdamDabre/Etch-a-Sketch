@@ -46,16 +46,3 @@ clearBtn.addEventListener('click', () => {
     })
 });
 
-const eraser = document.querySelector("#eraser");
-let savedColor;
-
-eraser.addEventListener("click", () => {
-    savedColor = colorPicker.value;
-    colorPicker.value = "#FFFFFF";
-});
-
-colorPicker.addEventListener("input", () => {
-    if (colorPicker.value === "#FFFFFF") {
-        colorPicker.value = savedColor;
-    }
-});
