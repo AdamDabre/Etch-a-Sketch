@@ -1,5 +1,6 @@
 //using a double for loop to create a grid of divs per collum per row
 function createGrid(rowsAmount, columnsAmount) {
+    let box = document.querySelector("#mainBox")
     let container = document.querySelector("#container");
 
     for (let i = 0; i < columnsAmount; i++) {
@@ -14,7 +15,7 @@ function createGrid(rowsAmount, columnsAmount) {
         }
         container.appendChild(column);
     }
-    document.body.appendChild(container);
+    document.box.appendChild(container);
 }
 
 

@@ -20,4 +20,12 @@
     background-color: rgb(255, 255, 255);
 
 }   
-
+#mainBox{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#buttonSection{
+    display: flex;
+    flex-flow: column;
+}
