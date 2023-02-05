@@ -1,28 +1,27 @@
 //using a double for loop to create a grid of divs per collum per row
-function createGrid(rowsAmount, columnsAmount) {
+function createGrid(squareSide) {
     let box = document.querySelector("#mainBox")
     let container = document.querySelector("#container");
 
-    for (let i = 0; i < columnsAmount; i++) {
+    for (let i = 0; i < squareSide; i++) {
         let column = document.createElement('div'); //creates a column to be used
         column.className = "column";
 
 
-        for (let j = 0; j < rowsAmount; j++) {
+        for (let j = 0; j < squareSide; j++) {
             let row = document.createElement("div");
             row.className = "rows";
             column.appendChild(row);
         }
         container.appendChild(column);
     }
-    document.box.appendChild(container);
+    box.appendChild(container);
 }
 
 
 // The values of rows and colllums determine how many "pixels" the canvas will have length and witdth wise
-let rows = 8;
-let columns = 8;
-createGrid(rows, columns);
+let squareSide = 32;
+createGrid(squareSide);
 const squares = document.querySelectorAll(".rows");
 const colorPicker = document.querySelector("#color-picker");
 let isMouseDown = false;
@@ -53,7 +52,7 @@ let eraserMode = false;
 eraserBtn.addEventListener('click', () => {
     eraserMode = !eraserMode;
     if (eraserMode) {
-        eraserBtn.textContent = "Eraser Mode is on";
+        eraserBtn.style.backgroundColor = "grey";
 
         squares.forEach(square => {
             square.addEventListener('mousedown', () => {
@@ -69,9 +68,10 @@ eraserBtn.addEventListener('click', () => {
             });
         });
     } else {
-        eraserBtn.textContent = "Eraser Mode is off";
+
+        eraserBtn.style.backgroundColor = "White";
 
     }
-})
+});
 
 
