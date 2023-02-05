@@ -46,3 +46,31 @@ clearBtn.addEventListener('click', () => {
     })
 });
 
+
+const eraserBtn = document.querySelector("#eraserBtn");
+let eraserMode = false;
+eraserBtn.addEventListener('click', () => {
+    eraserMode = !eraserMode;
+    if (eraserMode) {
+        eraserBtn.textContent = "Eraser Mode is on";
+
+        squares.forEach(square => {
+            square.addEventListener('mousedown', () => {
+                isMouseDown = true;
+            });
+            square.addEventListener('mouseup', () => {
+                isMouseDown = false;
+            });
+            square.addEventListener('mouseenter', () => {
+                if (isMouseDown && eraserMode) {
+                    square.style.background = "#FFFFFF";
+                }
+            });
+        });
+    } else {
+        eraserBtn.textContent = "Eraser Mode is off";
+
+    }
+})
+
+
